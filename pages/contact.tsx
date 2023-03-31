@@ -1,25 +1,24 @@
 import Head from "next/head";
+import ContactForm from "../components/Contact/ContactForm";
 import { NextPage } from "next";
-import HeadingPhoto from "@/components/Home/HeadingPhoto";
-import TopNews from "@/components/Home/TopNews";
 import Layout from "@/components/Layout/Layout";
 
-const Home: NextPage = () => {
+const Contact:NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Home</title>
+        <title>Contact</title>
         <meta name="description" content="Mao Yamaguchi's Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        <HeadingPhoto />
-        <TopNews />
+        <div className="text-5xl text-center font-semibold my-5">CONTACT</div>
+        <div>
+          <ContactForm />
+        </div>
       </main>
     </Layout>
   );
 };
-
-
-export default Home;
+export default Contact;
