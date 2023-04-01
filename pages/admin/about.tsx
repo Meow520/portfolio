@@ -1,4 +1,4 @@
-import AdminLayout from "../../components/AdminLayout/AdminLayout";
+import AdminLayout from "../../components/Admin/Layout/AdminLayout";
 const About = () => {
   return <AdminLayout>About</AdminLayout>;
 };

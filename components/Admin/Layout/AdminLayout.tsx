@@ -1,5 +1,5 @@
-import AdminHeader from "./AdminHeader";
-import Footer from "../Layout/Footer";
+import AdminHeader from "./AdminHeader"
+import Footer from "../../Layout/Footer";
 import { FC, ReactNode } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -24,7 +24,7 @@ const AdminLayout: FC<Props> = (props) => {
         />
       </Head>
       <main>
-        <div className="bg-gray-50 dark:bg-gray-800 font-work-sans">
+        <div className="bg-gray-50 dark:bg-gray-800 font-work-sans min-h-">
           <AdminHeader currentPath={currentPath} />
           {children}
           <Footer />
