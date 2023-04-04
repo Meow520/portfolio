@@ -1,6 +1,8 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import mysql from "@/lib/mysql";
-import { newsData } from "@/types/types";
+import { News } from "@prisma/client";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 // eslint-disable-next-line import/no-anonymous-default-export
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -18,9 +20,7 @@ export default handler;
 
 const getNews = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const results = await mysql.query("SELECT * FROM news WHERE id = ?", [
-      req.query.id,
-    ]);
+    const news = await prisma.news.findUnique({ where: { id: req.query.id } });
     const news: newsData = results[0];
     return res.status(200).json(news);
   } catch (error: unknown) {
