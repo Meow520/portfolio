@@ -5,3 +5,9 @@ export interface newsData {
   url: string;
   created_at: Date;
 }
+
+export interface ContactFormData {
+  username: string;
+  email: string;
+  message: string;
+}
