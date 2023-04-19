@@ -5,9 +5,9 @@ const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<newsData[]>
 ) => {
-  const newsList = [
+  const newsList:newsData[] = [
     {
-      id: 1,
+      id_number: 1,
       id_string: "1",
       title: "2022技育CAMP vol.4 努力賞受賞",
       content:
@@ -16,7 +16,7 @@ const handler = async (
       created_at: new Date("2022/6/21"),
     },
     {
-      id: 2,
+      id_number: 2,
       id_string: "2",
       title: "2022技育CAMP vol.9 努力賞受賞",
       content:
@@ -25,7 +25,7 @@ const handler = async (
       created_at: new Date("2022/12/12"),
     },
     {
-      id: 3,
+      id_number: 3,
       id_string: "3",
       title: "第6回和歌山県データ利活用コンペティション 政策アイデア賞受賞",
       content:
