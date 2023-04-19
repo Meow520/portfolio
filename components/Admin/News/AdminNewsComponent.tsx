@@ -7,11 +7,11 @@ type Props = {
 };
 const AdminNewsComponent: FC<Props> = (props) => {
   const { newsData } = props;
-  const { id, title, created_at } = newsData;
+  const { id_number, title, created_at } = newsData;
   const createdAtString: string = created_at.toString();
   const createdAtDate = createdAtString.slice(0, 10);
   return (
-    <Link href={`/admin/news/${id}`} className="">
+    <Link href={`/admin/news/${id_number}`} className="">
       <div className="w-full bg-white pb-5 pt-4 px-6 mb-4 rounded-lg hover:bg-gray-100">
         <div className="text-lg my-1">{createdAtDate}</div>
         <div className="text-xl">{title}</div>
