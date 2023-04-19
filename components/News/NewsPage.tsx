@@ -1,22 +1,22 @@
 import { newsData } from "@/types/types";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import NewsButton from "./NewsButton";
 
 type Props = {
   newsData: newsData;
-  allDataLength: number;
+  allDataLength?: number;
 };
 
 const NewsPage: FC<Props> = (props) => {
-  const { newsData, allDataLength } = props;
+  const { newsData } = props;
 
-  const { id_number, title, content, created_at, url } = newsData;
+  const { title, content, created_at, url } = newsData;
   const createdAtString: string = created_at.toLocaleDateString();
 
 
 
 
-  return (
+  return newsData&&(
     <div className="w-2/3 mx-auto my-10">
       <NewsButton url="/news" label="< All News" />
       <div className="text-3xl py-5 my-5 font-semi bold">{title}</div>
@@ -28,7 +28,7 @@ const NewsPage: FC<Props> = (props) => {
           {url}
         </a>
       </div>
-      <div className="flex justify-between my-10 text-xl">
+      {/* <div className="flex justify-between my-10 text-xl">
         {id_number === 1 ? (
           <div> </div>
         ) : (
@@ -39,7 +39,7 @@ const NewsPage: FC<Props> = (props) => {
         ) : (
           <NewsButton url={"/news/" + (id_number + 1)} label="Next >" />
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

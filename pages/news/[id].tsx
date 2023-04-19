@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { newsData } from "../../types/types";
 import { NextPage } from "next";
 import Layout from "../../components/Layout/Layout";
-import axios from "axios";
+// import axios from "axios";
 import NewsPage from "@/components/News/NewsPage";
 
 const Detail: NextPage = () => {
@@ -49,17 +49,15 @@ const Detail: NextPage = () => {
       created_at: new Date("2022/12/18"),
     },
   ];
-
-  const allDataLength = newsList.length;
-  const news = newsList.filter((news) => news.id_string === id);
-  // setNewsData(news[0]);
-  console.log(news);
+  useEffect(() => {
+    // setAllDataLength(newsList.length);
+    const news = newsList.filter((news) => news.id_string === id);
+    setNewsData(news[0]);
+  },[]);
 
   return (
     <Layout>
-      {news && (
-        <NewsPage newsData={news[0]} allDataLength={allDataLength} />
-      )}
+      {newsData && <NewsPage newsData={newsData} />}
     </Layout>
   );
 };
