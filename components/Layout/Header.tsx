@@ -28,7 +28,7 @@ const Header: FC<Props> = (props) => {
       >
         ABOUT
       </Link>
-      <Link
+      {/* <Link
         className={
           currentPath === "/contact"
             ? highlightHeaderElement
@@ -37,7 +37,7 @@ const Header: FC<Props> = (props) => {
         href="/contact"
       >
         CONTACT
-      </Link>
+      </Link> */}
       <Link
         className={
           currentPath == "/news" ? highlightHeaderElement : basicHeaderElement

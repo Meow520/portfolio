@@ -11,14 +11,16 @@ const NewsPage: FC<Props> = (props) => {
   const { newsData, allDataLength } = props;
 
   const { id, title, content, created_at, url } = newsData;
-  const createdAtString: string = created_at.toString();
-  const createdAtDate = createdAtString.slice(0, 10);
+  const createdAtString: string = created_at.toLocaleDateString();
+
+
+
 
   return (
     <div className="w-2/3 mx-auto my-10">
       <NewsButton url="/news" label="< All News" />
       <div className="text-3xl py-5 my-5 font-semi bold">{title}</div>
-      <div className="text-lg">{createdAtDate}</div>
+      <div className="text-lg">{createdAtString}</div>
       <div className="text-xl my-5">{content}</div>
       <div>
         詳細情報はこちらから :{" "}

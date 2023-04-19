@@ -1,5 +1,6 @@
 export interface newsData {
   id: number;
+  id_string: string;
   title: string;
   content: string;
   url: string;
