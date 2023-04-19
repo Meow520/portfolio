@@ -13,7 +13,7 @@ const NewsEdit: FC<Props> = (props) => {
   const [newUrl, setNewUrl] = useState("");
 
 
-  const { id, title, content, created_at, url } = newsData;
+  const { id_number, title, content, created_at, url } = newsData;
 
   return (
     <div className="w-2/3 mx-auto my-10">
