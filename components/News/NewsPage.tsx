@@ -9,9 +9,8 @@ type Props = {
 
 const NewsPage: FC<Props> = (props) => {
   const { newsData, allDataLength } = props;
-
   const { id_number, title, content, created_at, url } = newsData;
-  const createdAtString: string = created_at.toLocaleDateString();
+  const createdAtString = created_at.toString().slice(0, 10);
 
 
 
