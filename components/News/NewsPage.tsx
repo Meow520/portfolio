@@ -10,7 +10,7 @@ type Props = {
 const NewsPage: FC<Props> = (props) => {
   const { newsData, allDataLength } = props;
 
-  const { id, title, content, created_at, url } = newsData;
+  const { id_number, title, content, created_at, url } = newsData;
   const createdAtString: string = created_at.toLocaleDateString();
 
 
@@ -29,15 +29,15 @@ const NewsPage: FC<Props> = (props) => {
         </a>
       </div>
       <div className="flex justify-between my-10 text-xl">
-        {id === 1 ? (
+        {id_number === 1 ? (
           <div> </div>
         ) : (
-          <NewsButton url={"/news/" + (id - 1)} label="< Back" />
+          <NewsButton url={"/news/" + (id_number - 1)} label="< Back" />
         )}
-        {id === allDataLength ? (
+        {id_number === allDataLength ? (
           <div> </div>
         ) : (
-          <NewsButton url={"/news/" + (id + 1)} label="Next >" />
+          <NewsButton url={"/news/" + (id_number + 1)} label="Next >" />
         )}
       </div>
     </div>

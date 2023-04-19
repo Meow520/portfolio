@@ -1,5 +1,5 @@
 export interface newsData {
-  id: number;
+  id_number: number;
   id_string: string;
   title: string;
   content: string;
